@@ -1,0 +1,17 @@
+@layer components {
+  .layout .form-field {
+    @apply bg-slate-100;
+  }
+
+  .form-editor-config-panel .tab {
+    @apply flex flex-col py-2.5;
+  }
+
+  .form-editor-config-panel .item {
+    @apply px-5 py-2.5;
+  }
+
+  .form-editor-config-panel [data-slot='separator'] {
+    @apply my-2.5;
+  }
+}

@@ -1,0 +1,91 @@
+/* Tailwind Core */
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@import './config.reui.css';
+
+/** Global Themes **/
+@theme {
+  --color-destructive: #f8285a;
+  --color-destructive-active: #d81a48;
+  --color-destructive-clarity-20: #f8285a33;
+  --color-destructive-clarity-50: #f8285a80;
+  --color-destructive-light: #ffeef3;
+
+  --color-success: #17c653;
+  --color-success-active: #04b440;
+  --color-success-clarity-20: #17c65333;
+  --color-success-clarity-50: #17c65380;
+  --color-success-light: #eafff1;
+
+  --color-warning: #f6b100;
+  --color-warning-active: #dfa000;
+  --color-warning-clarity-20: #f6b10033;
+  --color-warning-clarity-50: #f6b10080;
+  --color-warning-light: #fff8dd;
+
+  --height-sheet: 93vh;
+
+  --height-dialog: 90vh;
+
+  --height-illustration: 128px;
+
+  --container-small-menu: 210px;
+  --container-form-card: 38.75rem;
+}
+
+/** Dark Mode Variant **/
+@custom-variant dark (&:is(.dark *));
+
+/** Global Styles **/
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  *:focus-visible {
+    @apply outline-ring rounded-xs shadow-none outline-2 outline-offset-3 transition-none!;
+  }
+}
+
+/** Custom Scrollbar **/
+@layer base {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--input);
+    border-radius: 5px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--input) transparent;
+  }
+}
+
+/** Smooth scroll **/
+html {
+  scroll-behavior: smooth;
+}
+
+/** Custom Containers **/
+@utility container {
+  @apply mx-auto max-w-none px-4 lg:px-5;
+
+  @media (width >= --theme(--breakpoint-xl)) {
+    @apply max-w-(--breakpoint-xl);
+  }
+}
+
+@utility container-fluid {
+  @apply mx-auto w-full px-4 lg:px-5;
+}
+
+/* Metronic Configs */
+@import './config.metronic.css';
+
+@import './components/form-editor.css';
